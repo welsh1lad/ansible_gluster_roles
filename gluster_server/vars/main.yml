@@ -1,3 +1,0 @@
----
-# vars file for gluster_server
-ssh_dir: /etc/ssh/

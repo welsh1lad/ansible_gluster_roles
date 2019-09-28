@@ -1,0 +1,8 @@
+---
+- hosts: glusterfs
+  gather_facts: no
+  tasks:
+  
+   - name: Install glusterfs server -- Ntp  in this case
+     import_role:
+       name: gluster_server
