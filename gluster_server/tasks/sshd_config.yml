@@ -1,0 +1,12 @@
+- name: Copy over the default sshd Config
+  file:
+    src: sshd_config
+    dest: "{{ ssh_dir }}"
+    backup: yes
+    owner: 0 
+    group: 0 
+    mode: 0644
+    force: yes
+    validate: '/usr/sbin/sshd -T -f %s'
+  become: yes
+  notify: restart sshd

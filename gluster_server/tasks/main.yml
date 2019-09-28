@@ -1,2 +1,5 @@
----
 # tasks file for gluster_server
+  - name: Install NTP 
+    import_tasks: ntp.yml  
+  - name: Install ssh config
+    import_tasks: sshd_config.yml
