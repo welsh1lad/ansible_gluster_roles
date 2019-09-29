@@ -1,0 +1,8 @@
+- name: Install XFS tools
+  yum:
+    name: "{ item.packages }"
+    state: installed
+  with_items:
+    - { packages: attr }
+    - { packages: xfsprogs }
+    - { packages: xfsdump }

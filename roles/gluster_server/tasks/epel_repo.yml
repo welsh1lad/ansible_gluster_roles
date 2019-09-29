@@ -1,0 +1,5 @@
+- name: Install Epel Extras repo
+  yum_repository: 
+    name: epel-release
+    state: present
+    

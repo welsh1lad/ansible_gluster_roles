@@ -1,5 +1,22 @@
 # tasks file for gluster_server
+  - name: Install Epel Repository
+    import_tasks: epel_repo.yml
+  
+  - name: Create Volume_groups
+    lvg_volume_group_name: glustervol1
+    block_device: /dev/sdb 
+    vol_size: 100%
+    import_taks: lvm_create.yml
+  
+  - name: Install Gluster Repo
+    import_tasks: gluster_repo.yml  
+  
+  - name: Upgrade the OS and insure that all new installs are new
+    import_task: update.yml
+  
   - name: Install NTP 
     import_tasks: ntp.yml  
-  - name: Install ssh config
-    import_tasks: sshd_config.yml
+
+  - name: Install Gluster Packages
+    import_tasks: install_gluster_packages.yml
+

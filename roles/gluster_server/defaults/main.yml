@@ -1,4 +1,6 @@
 ---
 # defaults file for gluster_server
-
+lvg_volume_group_name: glustervol1
+block_device: /dev/sdb 
+vol_size: 100%
   

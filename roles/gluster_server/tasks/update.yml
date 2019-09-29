@@ -1,0 +1,2 @@
+- name: Update OS system for centos
+  yum: name=* state=latest

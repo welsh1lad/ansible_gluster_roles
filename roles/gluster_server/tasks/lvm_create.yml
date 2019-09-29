@@ -1,0 +1,5 @@
+- name: Create a volume group on top of /dev/sda1 with physical extent size = 32MB
+  lvg:
+    vg: "{ lvg_volume_group_name }"
+    pvs: "{ block_device }"
+    pesize: "{ vol_size }"

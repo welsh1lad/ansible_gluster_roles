@@ -1,0 +1,10 @@
+- name: Install Gluster Server
+  yum:
+    name: glusterfs-server
+    state: installed
+
+- name: Install Gluster Fuse
+  yum:
+    name: glusterfs-fuse
+    state: installed
+    
