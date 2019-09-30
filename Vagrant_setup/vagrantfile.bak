@@ -1,0 +1,34 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "vm_gluster1" do |subconfig|
+    subconfig.vm.box = "bento/centos-7.5"
+    subconfig.vm.hostname = "vagrant-gluster1"
+    subconfig.vm.network :private_network, ip: "10.11.13.50"
+    G1dataDisk1 = './vm_disks/Gluster1dataDisk1.vdi'
+
+  config.vm.provider "virtualbox" do |vb|
+    if !File.exists?("{G1dataDisk1}")
+      vb.customize ['createmedium', '--filename', G1dataDisk1, '--variant', 'Fixed', '--size', 10 * 1024]
+    vb.customize ['storageattach', :id,  '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', G1dataDisk1]
+    subconfig.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+    subconfig.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "~/.ssh/id_rsa"]
+    subconfig.ssh.insert_key = false
+  end
+
+  config.vm.define "vm_gluster2" do |subconfig2|
+    subconfig2.vm.box = "bento/centos-7.5"
+    subconfig2.vm.hostname = "vagrant-gluster2"
+    subconfig2.vm.network :private_network, ip: "10.11.13.51"
+    G2dataDisk1 = './vm_disks/Gluster2dataDisk1.vdi'
+    
+  config2.vm.provider "vitualbox" do |vb|
+    if !File.exists?("{G2dataDisk1}")
+      vb.customize ['createmedium', '--filename', G2dataDisk1, '--variant', 'Fixed', '--size', 10 * 1024]
+      
+
+    vb.customize ['storageattach', :id,  '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', G2dataDisk1]
+    
+    subconfig2.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+    subconfig2.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "~/.ssh/id_rsa"]
+    subconfig2.ssh.insert_key = false
+  end
+end 
