@@ -1,12 +1,12 @@
 [nodes]
-vagrant-gluster1 ansible_host=10.11.13.50 
-vagrant-gluster2 ansible_host=10.11.13.51
+vagrant-gluster1 ansible_host=10.11.13.51 
+vagrant-gluster2 ansible_host=10.11.13.52
 
 [master]
-vagrant-gluster1 ansible_host=10.11.13.50 
+vagrant-gluster1 ansible_host=10.11.13.51 
 
 [slave]
-vagrant-gluster2 ansible_host=10.11.13.51
+vagrant-gluster2 ansible_host=10.11.13.52
 
 [glusterfs:children]
 master
@@ -14,3 +14,4 @@ slave
 
 [glusterfs:vars]
 ansible_user=vagrant
+ansible_become=yes

@@ -1,2 +1,5 @@
-- name: Update OS system for centos
-  yum: name=* state=latest
+
+- name: update the system
+  yum:
+    name: "*"
+    state: latest

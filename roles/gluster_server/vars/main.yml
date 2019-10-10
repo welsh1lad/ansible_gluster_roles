@@ -1,3 +1,9 @@
 ---
 # vars file for gluster_server
-ssh_dir: /etc/ssh/
+
+  ssh_dir: '/etc/ssh/'
+  lvg_volume_group_name: 'glustervol1'
+  block_device: '/dev/sdb' 
+  vol_size: 100%
+  logical_volume_name: 'lvdisk'
+  

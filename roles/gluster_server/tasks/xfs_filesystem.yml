@@ -1,0 +1,5 @@
+- name: Create a xfs filesystem on /dev/sdb1
+  filesystem:
+    fstype: xfs
+    force: yes
+    dev: /dev/sdb1
