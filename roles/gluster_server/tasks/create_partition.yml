@@ -1,5 +1,0 @@
-- name: Create a new primary partition on sdb
-  parted:
-    device: /dev/sdb
-    number: 1
-    state: present

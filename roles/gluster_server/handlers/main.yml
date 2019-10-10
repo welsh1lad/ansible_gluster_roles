@@ -1,9 +1,0 @@
----
-# handlers file for gluster_server
-  
-- name: restart ntp
-  service:
-    name: ntpd
-    state: restarted
-  become: yes 
-

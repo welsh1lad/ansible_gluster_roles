@@ -1,7 +1,0 @@
-- name: Ensure Gluster volume is mounted.
-  mount:
-    name: /bricks/
-    src: "{{ inventory_hostname }}:/brick1"
-    fstype: glusterfs
-    opts: "defaults,_netdev"
-    state: mounted

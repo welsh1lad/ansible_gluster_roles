@@ -1,4 +1,0 @@
-- name: Install Gluster Epel Repo
-  yum:
-    name: centos-release-gluster
-    state: present
