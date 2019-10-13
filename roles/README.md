@@ -1,3 +1,6 @@
+
+## Now working on GlusterRoleWorking Branch.
+
 # ansible_gluster_roles
 A test at creating ansible roles starting with a Glusterfs server
   This is a just for me to learn about Git  / Visual Code Gnd gluster fs  lusterfs and ansible all in one hit.
