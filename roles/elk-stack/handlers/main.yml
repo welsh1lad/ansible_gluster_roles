@@ -1,2 +1,19 @@
 ---
 # handlers file for elk-stack
+- name: restart_elasticsearch
+  service: 
+    name: elasticsearch
+    state: started
+    enabled: yes
+
+- name: restart_kibanna
+  service:
+    name: kibana
+    state: started
+    enabled: yes
+
+- name: restart_nginx
+  service: nginx
+  state: started
+  enabled: yes
+   

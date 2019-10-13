@@ -1,4 +1,0 @@
-- name: start gluster volume
-  gluster_volume:
-    state: started
-    name: vol1

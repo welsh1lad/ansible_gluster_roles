@@ -1,0 +1,20 @@
+- name : Upload the Elk repository
+  copy:
+    src: elasticsearch.repo
+    dest: /etc/yum.repos.d
+    owner: root
+    group: root
+    mode: '0644'
+
+- name : Upload the logstash repository
+  copy:
+    src: logstash.repo
+    dest: /etc/yum.repos.d
+    owner: root
+    group: root
+    mode: '0644'
+
+
+
+
+    

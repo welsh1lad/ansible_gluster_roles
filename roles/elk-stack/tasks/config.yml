@@ -1,0 +1,20 @@
+- name: Set host to only localhost withinthe electric search config
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    state: present
+    insertafter: "#network.host"
+    line: "network.host: localhost"
+  notify: restart_elasticsearch
+
+
+- name: Configure Kibanna host
+  replace:
+    path: /opt/kibana/config/kibana.yml
+    state: present
+    regexp: "server.host: 0.0.0.0"
+    replace: "server.host: localhost"
+  notify: restart_kibanna
+
+  
+
+ 

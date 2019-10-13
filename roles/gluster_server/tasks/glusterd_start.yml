@@ -1,6 +1,0 @@
-- name: start glusterD Daemon
-  service:
-    name: glusterd
-    state: started
-    enabled: yes
-    
