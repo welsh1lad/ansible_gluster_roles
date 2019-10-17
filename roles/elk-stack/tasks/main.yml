@@ -1,2 +1,11 @@
 ---
-# tasks file for elk-stack
+# tasks file for elk-stack 
+- name: install repos
+  import_tasks: install_repos.yml
+
+- name: install Packages
+  import_tasks: install_packages.yml
+
+- name: setup configuration 
+  import_tasks: config.yml
+

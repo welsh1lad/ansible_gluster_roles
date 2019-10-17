@@ -1,0 +1,24 @@
+- name: Set host to only localhost withinthe electric search config
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    state: present
+    insertafter: "#network.host"
+    line: "network.host: localhost"
+  notify: restart_elasticsearch
+
+
+- name: Configure Kibanna host
+  replace:
+    path: /etc/kibana/kibana.yml
+    regexp: "server.host: 0.0.0.0"
+    replace: "server.host: localhost"
+    backup: yes
+  notify: restart_kibanna
+
+- name: setup reverse proxy with nginx config 
+  copy: 
+    src: kibana.conf
+    dest: /etc/nginx/conf.d/kiban.conf
+    backup: yes
+  notify: restart_kibana
+   

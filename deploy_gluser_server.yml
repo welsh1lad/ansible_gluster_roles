@@ -1,5 +1,5 @@
 ---
-- hosts: glusterfs
+- hosts: 
   gather_facts: no
   tasks:
    - name: set host names

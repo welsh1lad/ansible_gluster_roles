@@ -1,2 +1,3 @@
 ---
 # vars file for elk-stack
+elk-rpm-key: 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'

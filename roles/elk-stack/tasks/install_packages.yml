@@ -1,0 +1,41 @@
+- name: Install Java 8
+  yum:
+    name: java
+    state: latest
+
+- name: Install elasticsearch GPG Key
+  rpm_key:
+    state: present
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
+    
+- name: Install ElasticSearch 
+  yum:
+    name: elasticsearch
+    state: latest
+  
+
+- name: Install kibana
+  yum:
+    name: kibana
+    state: latest
+  notify: restart_kibana
+
+- name: Install Epel Repository
+  yum:
+    name: epel-release
+    state: latest
+
+- name: Install Nginx
+  yum:
+    name: nginx
+    state: latest
+  notify: restart_nginx
+
+- name: install http-tools
+  yum: 
+    name: httpd-tools
+
+- name: Install Logstash
+  yum: 
+    name: logstash
+    state: latest
