@@ -6,8 +6,7 @@
      hostname:
        name: "{{ item }}"
      with_items:
-       - vagrant-gluster1
-       - vagrant-gluster1 
+       - vagrant-gluster1-server
 
    - name: Install glusterfs server
      import_role:

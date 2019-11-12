@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: elk-servers
   tasks:
 
     - import_role:

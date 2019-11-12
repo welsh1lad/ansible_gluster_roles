@@ -1,2 +1,10 @@
 [elk-servers]
-elk-server ansible_ssh=10.11.13.51
+elk-server ansible_ssh=10.11.13.51 ansible_user=vagrant ansible_become=yes
+
+[elk-clients]
+elk-client ansible_ssh=10.11.13.52 ansible_user=vagrant ansible_become=yes
+
+[elk-nodes:children]
+elk-servers
+elk-clients
+

@@ -1,8 +1,14 @@
-- name: Install Java 8
+- name: Install Openjdk-Dev Tools
   yum:
-    name: java
+    name: java-1.8.0-openjdk-devel 
     state: latest
 
+- name: Install openJDK
+  yum:
+    name: java-1.8.0-openjdk
+    state: latest
+  ignore_errors: true
+  
 - name: Install elasticsearch GPG Key
   rpm_key:
     state: present
