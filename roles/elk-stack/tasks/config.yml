@@ -20,7 +20,7 @@
     src: kibana.conf
     dest: /etc/nginx/conf.d/kibana.conf
     backup: yes
-  notify: restart_nginx
+
 
 - name: setup reverse proxy with nginx config for elastic 
   copy: 
