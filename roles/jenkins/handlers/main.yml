@@ -2,7 +2,7 @@
 - name: start jenkins
   service:
     name: jenkins
-    state: running
+    state: started
     enabled: yes
 
 - name: start nginx

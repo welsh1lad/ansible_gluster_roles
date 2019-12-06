@@ -1,0 +1,14 @@
+- name: install repos
+  import_tasks: install_repos.yml
+
+- name: install Packages
+  import_tasks: install_pkgs.yml
+
+- name: setup environment variables
+  import_tasks: set_up_java.yml
+
+- name: re-configure nginx
+  import_tasks: nginx_config.yml
+  
+- name: configure firewall
+  import_tasks: firewall_config.yml

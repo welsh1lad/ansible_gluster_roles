@@ -1,0 +1,6 @@
+- name: copy over nginx config
+  copy: 
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    backup: yes
+  notify: start nginx  
