@@ -1,0 +1,21 @@
+---
+
+- name: copy over jenkins repos 
+  copy: 
+    src: jenkins.repo
+    dest: /etc/yum.repos.d/jenkins.repo
+    backup: yes
+
+- name: copy over jenkins pkg key 
+  copy: 
+    src: jenkins.io.key
+    dest: /tmp/jenkins.io.key
+    
+- name: import jenkins key
+  rpm_key:
+    state: present
+    key: /tmp/jenkins.io.key
+
+
+
+ 

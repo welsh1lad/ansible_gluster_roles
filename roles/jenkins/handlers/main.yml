@@ -1,0 +1,34 @@
+---
+- name: start jenkins
+  service:
+    name: jenkins
+    state: running
+    enabled: yes
+
+- name: start nginx
+  service:
+    name: nginx
+    state: running
+    enabled: yes
+
+- name: stop nginx
+  service:
+    name: nginx
+    state: stopped
+
+- name: stop jenkins
+  service: 
+    name: jenkins
+    state: stopped
+
+- name: restart firewall
+  service:
+    name: firewalld
+    state: restarted
+    
+
+
+
+
+
+    

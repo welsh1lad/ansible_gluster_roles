@@ -1,0 +1,17 @@
+---
+- name: Install Java 1.8.0 OpenJdk
+  yum:
+    name: java-1.8.0-openjdk.x86_64
+    state: installed
+
+- name: Install Jenkins Latest
+  yum:
+    name: jenkins
+    state: latest
+  notify: start jenkins  
+
+- name: Install Nginx
+  yum: 
+    name: nginx
+    state: latest
+  notify: start nginx

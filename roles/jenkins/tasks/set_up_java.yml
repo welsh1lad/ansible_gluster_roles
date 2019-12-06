@@ -1,0 +1,28 @@
+---
+- name: backup dot profiles
+  copy:
+    src: /etc/profile
+    dest: /etc/profile_backup
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: setup JAVA_HOME environment variables into environment file
+  lineinfile:
+    path: /etc/environment
+    line: export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk
+
+- name: setup JAVA_JRE environment variables into environment file
+  lineinfile:
+    path: /etc/environment
+    line: export JRE_HOME=/usr/lib/jvm/jre
+
+- name: setup JAVA_HOME environment variables into profile file
+  lineinfile:
+    path: /etc/profile
+    line: export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk
+
+- name: setup JAVA_JRE environment variables into profiles
+  lineinfile:
+    path: /etc/profile
+    line: export JRE_HOME=/usr/lib/jvm/jre

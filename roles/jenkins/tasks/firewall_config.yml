@@ -1,0 +1,17 @@
+---
+- name: configure Firewall ports jenkins
+  firewalld:
+    zone: public
+    port: 8080/tcp
+    permanent: yes
+    state: enabled
+  notify: restart firewall
+
+- name: configure Firewall ports fo nginx services http
+  firewalld:
+    zone: public
+    service: http
+    permanent: yes
+    state: enabled
+  notify: restart firewall
+   
