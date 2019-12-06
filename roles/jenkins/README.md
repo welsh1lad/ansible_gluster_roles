@@ -6,3 +6,13 @@
 
 ### Basic jenkins server is setup with very minimal re-configurations
 
+### services that are restarted are
+#### firewalld
+#### nxinx
+#### jenkins
+
+### Vagrant is used to bring up the server  , with preinstalled ssh keys and IP address is set to 10.11.13.51
+
+## To bring up the server I user the following
+
+ansible-playbook -i jenkins_host install_jenkins.yml
