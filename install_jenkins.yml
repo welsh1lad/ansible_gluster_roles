@@ -1,0 +1,8 @@
+---
+- hosts: jenkins-server
+  tasks:
+
+    - import_role:
+        name: jenkins
+    
+   
