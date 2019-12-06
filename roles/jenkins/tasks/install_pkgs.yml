@@ -1,4 +1,9 @@
 ---
+- name: install epel-release
+  yum:
+    name: epel-release
+    state: latest
+    
 - name: Install Java 1.8.0 OpenJdk
   yum:
     name: java-1.8.0-openjdk.x86_64
