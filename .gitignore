@@ -1,2 +1,3 @@
 *.vdi
 *.vdmk
+Vagrant_setup/.vagrant/machines

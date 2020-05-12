@@ -1,30 +1,19 @@
 
 
-NODE_COUNT=1
+NODE_COUNT=3
 Vagrant.configure("2") do |config|
   (1..NODE_COUNT).each do |i|
-    config.vm.define "vm_jenkins#{i}" do |config|
+    config.vm.define "vm_dhcp-#{i}" do |config|
     config.vm.box = "bento/centos-7.5"
-    config.vm.hostname = "vagrant-jenkins-"#{i}
+    config.vm.hostname = "vagrant-dhcp-"#{i}
     config.vm.network :private_network, ip: "10.11.13.5#{i}"
-    G1dataDisk1 = "./vm_disks/jenkins-#{i}-dataDisk1.vdi"
 
-    config.vm.provider "virtualbox" do |vb|
-      if !File.exists?("{G1dataDisk1}")
-        vb.customize ['createmedium', '--filename', G1dataDisk1, '--variant', 'Fixed', '--size', 10 * 1024]
-        vb.customize ['storageattach', :id,  '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', G1dataDisk1]
       
     config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
     config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "~/.ssh/id_rsa"]
     config.ssh.insert_key = false 
     end
 
-    config.vm.provision "ansible" do |ansible|
-      ansible.inventory_path = "/Users/rob/Documents/Gluster_ansible_roles/ansible_gluster_roles/jenkins_host"
-      ansible.playbook = "/Users/rob/Documents/Gluster_ansible_roles/ansible_gluster_roles/install_jenkins.yml"
-    end
-
-    end
-   end
+    
 end
 end

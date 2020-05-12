@@ -1,3 +1,2 @@
 [jenkins]
-jenkins-server ansible_ssh=10.11.13.51 ansible_user=vagrant ansible_become=yes
-
+vm_jenkins1  ansible_ssh=10.11.13.51 ansible_user=vagrant ansible_become=yes

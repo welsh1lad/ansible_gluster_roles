@@ -1,0 +1,7 @@
+---
+- name: Install Wget tools
+  yum:
+    name: wget
+    state: latest
+
+  

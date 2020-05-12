@@ -1,0 +1,18 @@
+---
+- name: Install net tools
+  yum:
+    name: net-tools
+    state: latest
+
+- name: Install Bind Tools
+  yum:
+    name: bind-utils
+    state: latest
+
+- name: instll Nmap 
+  yum:
+    name: nmap
+    state: latest
+
+
+    

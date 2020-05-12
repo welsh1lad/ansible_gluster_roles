@@ -1,5 +1,5 @@
 ---
-- hosts: jenkins-server
+- hosts: jenkins
   tasks:
 
     - import_role:
